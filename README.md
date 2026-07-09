@@ -446,18 +446,28 @@ for (int i = 1; i <= m; i++)
 ```
 
 ---
+```cpp
+## Find
 
-## Quick Reference: Which Container?
+#include <algorithm>
+#include <vector>
 
-| Need | Use |
-|---|---|
-| Dynamic array | `vector` |
-| Fast key lookup / counting | `unordered_map` |
-| Sorted key lookup | `map` |
-| Fast membership test, no order | `unordered_set` |
-| Sorted unique elements | `set` |
-| LIFO | `stack` |
-| FIFO | `queue` |
-| Both ends | `deque` |
-| Kth largest/smallest, always-sorted-min/max | `priority_queue` |
+vector<int> nums = {1, 3, 5, 7, 9};
+auto it = std::find(nums.begin(), nums.end(), 5);
 
+if (it != nums.end()) {
+    int pos = it - nums.begin(); // or std::distance(nums.begin(), it)
+    cout << "Found at index " << pos << endl;
+} else {
+    cout << "Not found" << endl;
+}
+
+string s = "hello world";
+size_t pos = s.find("world");
+
+if (pos != string::npos) {
+    cout << "Found at index " << pos << endl;
+} else {
+    cout << "Not found" << endl;
+}
+```
